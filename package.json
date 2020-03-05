@@ -1,6 +1,6 @@
 {
   "name": "aliyun-fc-http",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "阿里云函数计算node环境http接口适配器",
   "main": "dist/index.js",
   "scripts": {
