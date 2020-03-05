@@ -1,0 +1,33 @@
+{
+  "name": "aliyun-fc-http",
+  "version": "1.0.0",
+  "description": "阿里云函数计算node环境http接口适配器",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc -p . ",
+    "release-minor": "npm run build && git add -A && git commit -m \"auto release\" && npm version minor -f && git push && npm publish",
+    "release-patch": "npm run build && git add -A && git commit -m \"auto release\" && npm version patch -f && git push && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orange030/aliyun-fc-http.git"
+  },
+  "author": "orange030",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orange030/aliyun-fc-http/issues"
+  },
+  "homepage": "https://github.com/orange030/aliyun-fc-http#readme",
+  "keywords": [
+    "aliyun",
+    "http",
+    "express",
+    "serverless",
+    "node"
+  ],
+  "devDependencies": {
+    "@types/node": "^13.7.7",
+    "typescript": "^3.8.3"
+  }
+}
