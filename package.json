@@ -1,13 +1,13 @@
 {
   "name": "aliyun-fc-http",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "阿里云函数计算node环境http接口适配器",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc -p . ",
-    "release-minor": "npm run build && git add -A && git commit -m \"auto release\" && npm version minor -f && git push && npm publish",
-    "release-patch": "npm run build && git add -A && git commit -m \"auto release\" && npm version patch -f && git push && npm publish"
+    "release-minor": "npm run build && git add -A && npm version minor -f && git commit -m \"auto release\" && git push && npm publish",
+    "release-patch": "npm run build && git add -A && npm version patch -f && git commit -m \"auto release\" && git push && npm publish"
   },
   "repository": {
     "type": "git",

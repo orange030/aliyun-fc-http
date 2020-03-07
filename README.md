@@ -1,4 +1,4 @@
-# aliyun fc http
+# aliyun-fc-http
 ## 简介
 阿里云函数计算服务node环境http接口适配器. 
 
@@ -13,7 +13,7 @@ npm install aliyun-fc-http
 ## 使用说明
 提供2种方法使用
 
-1.`createServer` 函数以创建可以接收函数计算数据的server
+1.使用aliyun-fc-http中提供的 `createServer` 函数以创建可以接收函数计算数据的server
 
 ```typescript
 import * as fc from 'aliyun-fc-http'
@@ -26,7 +26,7 @@ const server = fc.createServer((req, res) => {
 export const handler = server.handler
 ```
 
-2.使用 `inject` 函数将如上功能注入 `http.createServer` 中
+2.使用aliyun-fc-http中提供的 `inject` 函数将如上功能注入 `http.createServer` 中
 
 ```typescript
 import {inject,handler} from 'aliyun-fc-http'
@@ -91,7 +91,10 @@ Resources:
 npx copy-node-modules ./ ./dist
 ```
 
+函数计算在没有访问量的时候会释放资源, 再次请求时, 需要一定的时间进行初始化操作. 越复杂的框架初始化所需的时间越久. express 初次请求返回的时间需要0.8秒左右, nest.js 则需要3秒. 请根据自己需求选择适合的框架
+
 以下为各框架使用范例,在如上所示配置文件的函数test中,演示Get请求根路径`/`返回'Hello World' , `/time` 路由返回当前时间
+
 ### express
 ```typescript
 import { handler, inject } from 'aliyun-fc-http'
