@@ -141,7 +141,9 @@ class AliyunServer extends http.Server{
             // console.log('handler(request, response, context)')
             const urlPrefix = '/proxy/'+(context as AliyunContext).service.name+'/'+(context as AliyunContext).function.name
             let url = (request as AliyunRequest).url
-            url = url.substring( url.indexOf(urlPrefix)+urlPrefix.length )
+            if (url.indexOf(urlPrefix) > -1) {
+                url = url.substring( url.indexOf(urlPrefix)+urlPrefix.length )
+            }
             const requestWrap = new RequestWrap(request as AliyunRequest,url||'/')
             const responseWrap = new ResponseWrap(requestWrap,response)
             requestListener(requestWrap,responseWrap)
